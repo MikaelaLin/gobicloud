@@ -2,7 +2,7 @@
 
 //connect to the database
 
-$mysqli = new mysqli("localhost", "root", "password", "GOBI_DB");
+$mysqli = new mysqli("localhost", "root", "", "GOBI_DB");
 
 /* check connection */
 if (mysqli_connect_errno()) {
@@ -29,49 +29,23 @@ $timeFlag= $Get["timeflag"];
 $status = $Get["status"];
 $projectID = $Get["projectid"];
 $lastUpdate = $Get["lastUpdate"];
+$taskID = null;
 
 //add data to Task table
 /* create a prepared statement */
-if ($insertData = $mysqli->prepare("INSERT INTO samples TASK ()")) {
+if ($stmt = $mysqli->prepare("INSERT INTO TASK (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)")) {
 
     /* bind parameters for markers */
-    $insertData->bind_param("sssdidis", $locationID, $staffID, $time, $pH, $EC, $temp, $TDS, $description);
+    $stmt->bind_param("isiiisiississs", $taskID, $taskName, $workspaceID, $taskPriority, $userID, $dueDate, $timeFlag, $status, $geolocation, $tag, $projectID, $lastUpdate, $taskNote, $dueTime);
 
     /* execute prepared statement */
-    $insertData->execute();
-
-    /* if a row was added */
-    if ($insertData->affected_rows == 1) {
-        /* check to see what the id is and timestamp */
-        $id = $insertData->insert_id;
-
-        /* create a prepared statement to get the timestamp */
-        if ($substmt = $mysqli->prepare("SELECT LastUpdate FROM samples WHERE SampleID = ?")) {
-
-            /* bind the id */
-            $substmt->bind_param("i", $id);
-
-            /* execute prepared statement */
-            $substmt->execute();
-
-            /* bind result variables */
-            $substmt->bind_result($timestamp);
-
-            $substmt->fetch();
-            /* write success, sample id and timestamp to array for JSON */
-            $arr = array('Result' => 'Success', 'SampleID' => $id, 'LastUpdate' => $timestamp);
-
-            /* echo JSON of the array for the phone */
-            echo json_encode($arr);
-            
-            /* close statement */
-            $substmt->close();
-        }
-    }
+    $stmt->execute();
+    
 
     /* close statement*/
-    $insertData->close();
-}
+    $stmt->close();
+    echo "insertion worked";
+}else echo "insertion didn't work!";
 
 /* close connection */
 $mysqli->close();
