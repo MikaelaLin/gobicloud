@@ -33,18 +33,20 @@ $taskID = null;
 
 //add data to Task table
 /* create a prepared statement */
-if ($stmt = $mysqli->prepare("INSERT INTO TASK (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)")) {
-
+if ($stmt = $mysqli->prepare("INSERT INTO TASK VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+echo "prep";
     /* bind parameters for markers */
-    $stmt->bind_param("isiiisiississs", $taskID, $taskName, $workspaceID, $taskPriority, $userID, $dueDate, $timeFlag, $status, $geolocation, $tag, $projectID, $lastUpdate, $taskNote, $dueTime);
-
-    /* execute prepared statement */
+    $stmt->bind_param("isiiisiississs", $taskID, $taskName, $workspaceID, $taskPriority, $userID, $dueDate, $timeFlag, $status, $geolocation, $tag, $projectID, $lastUpdate, $taskNote, $dueTime);   /* execute prepared statement */
     $stmt->execute();
     
-
+    //check for error
+    if (!$mysqli->query($stmt)) {
+    trigger_error($mysqli->error);
+}
+    echo "executed ";
     /* close statement*/
     $stmt->close();
-    echo "insertion worked";
+    echo "insertion worked ";
 }else echo "insertion didn't work!";
 
 /* close connection */
