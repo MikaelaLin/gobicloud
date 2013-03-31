@@ -14,20 +14,22 @@ if (mysqli_connect_errno()) {
     //printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-
+session_start();
+echo $_SESSION['taskID'].' is a task id';
+/*
 
 $query = "SELECT USERID, PROKECTID, WORKSPACEID, TASKNAME, TASKNOTE, PRIORITY, 
     DUEDATE, DUETIME, STATUS, TIMEFLAG, GEOLOCATION, TAG FROM TASK WHERE ID=";
 $result = $mysqli->query($query);
+*/
 
-
-/* associative and numeric array */
+/* associative and numeric array 
 $row = $result->fetch_array(MYSQLI_BOTH);
 printf ("%s (%s)\n", $row[0], $row["CountryCode"]);
 
-/* free result set */
+/* free result set 
 $result->free();
-
+*/
 /* close connection */
 $mysqli->close();
 ?>
