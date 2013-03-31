@@ -1,3 +1,4 @@
+
 <?php
 
 echo "im in ";
@@ -52,8 +53,13 @@ echo "commit is done";
 /* close connection */
 $mysqli->close();
 
+
+
 //read data from it
 
 
 ?>
 
+
+<!DOCTYPE html>
+<html><form action =" editLin.php"><input type="submit" value="EDIT" /></form></html>
