@@ -41,7 +41,7 @@ if($mysqli->query("UPDATE TASK SET TASKNAME='$taskName', WORKSPACEID='$workspace
     PRIORITY='$taskPriority', USERID='$userID', DUEDATE='$dueDate', TIMEFLAG='$timeFlag',
     STATUS='$status', GEOLOCATION='$geolocation', TAG='$tag', PROJECTID='$projectID',
     LASTUPDATE=CURRENT_TIMESTAMP, TASKNOTE='$taskNote', DUETIME='$dueTime'
-    WHERE TASKID=10)")){
+    WHERE TASKID=10")){
     $mysqli->commit();}
     else{
     die('Could not update data: ' . $mysqli->error);
