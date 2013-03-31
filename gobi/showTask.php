@@ -21,11 +21,16 @@ $query = "SELECT TASKID, TASKNAME, DUEDATE FROM TASK";
 $result = $mysqli->query($query);
 
 
-/* associative and numeric array */
+/* associative and numeric array 
 while($row = $result->fetch_array(MYSQLI_ASSOC)){
 printf ("%s %s \n", $row["TASKNAME"], $row["DUEDATE"]);
-};
+};*/
+?>
+<?php while($row = $result->fetch_array(MYSQLI_ASSOC)): ?>
 
+<p><?php printf ("%s %s \n", $row["TASKNAME"], $row["DUEDATE"]); ?></p>
+<?php endwhile; ?>
+<?php
 /* free result set */
 $result->free();
 
@@ -33,5 +38,4 @@ $result->free();
 $mysqli->close();
 ?>
 
-?>
 
