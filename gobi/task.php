@@ -54,7 +54,6 @@ echo "commit is done";
 $mysqli->close();
 
 
-
 //read data from it
 
 
@@ -62,4 +61,4 @@ $mysqli->close();
 
 
 <!DOCTYPE html>
-<html><form action =" editLin.php"><input type="submit" value="SHOW TASK" /></form></html>
+<html><form action =" editTask.php"><input type="submit" value="SHOW TASK" /></form></html>
