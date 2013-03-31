@@ -22,8 +22,9 @@ $result = $mysqli->query($query);
 
 
 /* associative and numeric array */
-$row = $result->fetch_array(MYSQLI_ASSOC);
-printf ("%s %s\n", $row["TASKNAME"], $row["DUEDATE"]);
+while($row = $result->fetch_array(MYSQLI_ASSOC)){
+printf ("%s %s \n", $row["TASKNAME"], $row["DUEDATE"]);
+};
 
 /* free result set */
 $result->free();
