@@ -47,18 +47,7 @@ if($mysqli->query("UPDATE TASK SET TASKNAME='$taskName', WORKSPACEID='$workspace
     die('Could not update data: ' . $mysqli->error);
     };
     echo "Updated data successfully\n";
-     
-//mysql_select_db('GOBI_DB');
-//$retval = mysql_query( $sql, $conn );
-/*if (!$mysqli->query("UPDATE TASK SET TASKNAME='$taskName', WORKSPACEID='$workspaceID',
-    PRIORITY='$taskPriority', USERID='$userID', DUEDATE='$dueDate', TIMEFLAG='$timeFlag',
-    STATUS='$status', GEOLOCATION='$geolocation', TAG='$tag', PROJECTID='$projectID',
-    LASTUPDATE=CURRENT_TIMESTAMP, TASKNOTE='$taskNote', DUETIME='$dueTime'
-    WHERE TASKID=10)")) {
-    trigger_error($mysqli->error);
-    }else $mysqli->commit();*/
   
-echo " update is done";
 /* close connection */
 $mysqli->close();
 
