@@ -1,6 +1,6 @@
 <?php
 
-echo "im in ";
+//connect to the database
 if (!isset($_GET["taskname"]) || !isset($_GET["tasknote"]) || !isset($_GET["priority"]) || 
         !isset($_GET["duedate"]) || !isset($_GET["duetime"]) || !isset($_GET["geolocation"]) || 
         !isset($_GET["tag"]) || !isset($_GET["workspaceid"]) || !isset($_GET["userid"])
@@ -9,7 +9,6 @@ if (!isset($_GET["taskname"]) || !isset($_GET["tasknote"]) || !isset($_GET["prio
     echo "Go away nothing to see here";
     exit();
 }
-//connect to the database
 $mysqli = new mysqli("localhost", "root", "", "GOBI_DB");
 
 /* check connection */
@@ -37,18 +36,29 @@ $userID = $_GET["userid"];
 $timeFlag= $_GET["timeflag"];
 $status = $_GET["status"];
 $projectID = $_GET["projectid"];
+$lastUpdate = $_GET["lastUpdate"];
+
+echo 'show task name '.$_GET["taskname"].' ';
+
 //add data to Task table
+/* create a prepared statement */
+if ($stmt = $mysqli->prepare("INSERT INTO TASK VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+echo "prep";
+    /* bind parameters for markers */
+    $stmt->bind_param("isiiisiississs", '', $taskName, $workspaceID, $taskPriority, $userID, $dueDate, $timeFlag, $status, $geolocation, $tag, $projectID, '', $taskNote, $dueTime);   
+    /* execute prepared statement */
+    $stmt->execute();
+    
+    //check for error
+    if (!$mysqli->query($stmt)) {
+    trigger_error($mysqli->error);
+}
+    echo "executed ";
+    /* close statement*/
+    $stmt->close();
+    echo "insertion worked ";
+}else echo "insertion didn't work!";
 
-$mysqli->query("INSERT INTO TASK (TASKID, TASKNAME, WORKSPACEID, PRIORITY, USERID, 
-    DUEDATE, TIMEFLAG, STATUS, GEOLOCATION, TAG, PROJECTID, LASTUPDATE, TASKNOTE, 
-    DUETIME)VALUES ('', '$taskName', '$workspaceID', '$taskPriority', '$userID',
-        '$dueDate', '$timeFlag', '$status', '$geolocation', '$tag', '$projectID', CURRENT_TIMESTAMP, '$taskNote', '$dueTime')"); 
-
-
-
-
-$mysqli->commit();
-echo "commit is done";
 /* close connection */
 $mysqli->close();
 
@@ -56,4 +66,3 @@ $mysqli->close();
 
 
 ?>
-
