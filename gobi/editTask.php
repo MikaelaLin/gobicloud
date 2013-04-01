@@ -28,18 +28,6 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s \n", $row["USERID"], $row["PROJECTI
         $row["DUEDATE"], $row["DUETIME"], $row["STATUS"],$row["TIMEFLAG"],
         $row["GEOLOCATION"], $row["TAG"]);
 
-/*$userID = $row["USERID"];
-$projectID = $row["PROJECTID"];
-$workspaceID = $row["WORKSPACEID"];
-$taskName = $row["TASKNAME"];
-$taskNote = $row["TASKNOTE"];
-$priority = $row["PRIORITY"];
-$dueDate = $row["DUEDATE"];
-$dueTime = $row["DUETIME"];
-$status = $row["STATUS"];
-$timeFlag = $row["TIMEFLAG"];
-$geolocation = $row["GEOLOCATION"];
-$tag = $row["TAG"];*/
 ?>
 <body>
         <form name="input" action="commitChange.php" method="get">
