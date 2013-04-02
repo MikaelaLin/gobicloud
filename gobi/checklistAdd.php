@@ -100,6 +100,6 @@ $mysqli->close();
 
 <!DOCTYPE html>
 <html>
-    <form action =" editTask.php"><input type="submit" value="SHOW TASK" />
+    <form action =" checklistEdit.php"><input type="submit" value="SHOW TASK" />
     </form>
 </html>

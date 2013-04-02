@@ -30,7 +30,7 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s \n", $row["USERID"], $row["PROJECTI
 
 ?>
 <body>
-        <form name="input" action="commitChange.php" method="get" id="editTask">
+        <form name="input" action="taskCommit.php" method="get" id="editTask">
         USER ID: <input type="text" name="userid1" value ="<?php echo $row["USERID"]?>"><br>
         PROJECT ID: <input type="text" name="projectid1" value ="<?php echo $row["PROJECTID"]?>"><br>
         WORKSPACE ID: <input type="text" name="workspaceid1" value ="<?php echo $row["WORKSPACEID"]?>"><br>
