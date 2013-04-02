@@ -44,9 +44,9 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s \n", $row["USERID"], $row["PROJECTI
         GEO LOCATION: <input type="text" name="geolocation1" value ="<?php echo $row["GEOLOCATION"]?>"><br>
         TAG: <input type="text" name="tag1" value ="<?php echo $row["TAG"]?>"><br>        
         
-        <input type="button" onclick="var e = document.getElementById('editTask'); e.action='commitChange.php'; e.submit();" value="COMMIT">
+        <input type="button" onclick="var e = document.getElementById('editTask'); e.action='taskCommit.php'; e.submit();" value="COMMIT">
 
-        <input type="button" onclick="var e = document.getElementById('editTask'); e.action='editJSON.php'; e.submit();" value="EDITJSON">
+        <input type="button" onclick="var e = document.getElementById('editTask'); e.action='taskEditJSON.php'; e.submit();" value="EDITJSON">
         
         
         </form>
