@@ -39,7 +39,9 @@ $timeFlag= $_GET["timeflag"];
 $status = $_GET["status"];
 $projectID = $_GET["projectid"];
 //add data to Task table
-$sql = "SELECT TASKID, LASTUPDATE FROM TASK WHERE TASKID = (SELECT MAX(TASKID) FROM TASK)";
+$sql = "SELECT TASKID, TASKNAME, WORKSPACEID, PRIORITY, USERID, DUEDATE, TIMEFLAG, STATUS, GEOLOCATION, TAG, 
+    PROJECTID, LASTUPDATE, TASKNOTE, DUETIME
+    FROM TASK WHERE TASKID = (SELECT MAX(TASKID) FROM TASK)";
 if($mysqli->query("INSERT INTO TASK (TASKID, TASKNAME, WORKSPACEID, PRIORITY, USERID, 
     DUEDATE, TIMEFLAG, STATUS, GEOLOCATION, TAG, PROJECTID, LASTUPDATE, TASKNOTE, 
     DUETIME)VALUES ('', '$taskName', '$workspaceID', '$taskPriority', '$userID',
@@ -71,7 +73,7 @@ if($mysqli->query("INSERT INTO TASK (TASKID, TASKNAME, WORKSPACEID, PRIORITY, US
     
     
 /* write success, task id and timestamp to array for JSON */
-$Task = array('Result' => 'Success', 'TASKID' => $task_id, 'TASKNAME' => $task_name, 'WORKSPACEID' => $task_workpsaceid, 
+$Task = array('Result' => 'Success', 'TASKID' => $task_id, 'TASKNAME' => $task_name, 'WORKSPACEID' => $task_workspaceid, 
         'PRIORITY' => $task_priority, 'USERID' => $task_userid, 'DUEDATE' => $task_duedate, 'TIMEFLAG' => $task_timeflag, 
         'STATUS' => $task_status, 'GEOLOCATION' => $task_geolocation, 'TAG' => $task_tag, 'PROJECTID' => $task_projectid,
         'LASTUPDATE' => $task_lastupdate,'TASKNOTE' => $task_tasknote, 'DUETIME' => $task_duetime,);
