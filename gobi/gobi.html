@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <form name="input" action="task2.php" method="get">
+        <form name="input" action="taskPrepare.php" method="get" id="task">
         USER ID: <input type="text" name="userid"><br>
         PROJECT ID: <input type="text" name="projectid"><br>
         WORKSPACE ID: <input type="text" name="workspaceid"><br>
@@ -19,8 +19,14 @@
         TIME FLAG: <input type="text" name="timeflag"><br>
         GEO LOCATION: <input type="text" name="geolocation"><br>
         TAG: <input type="text" name="tag"><br>        
-        <input type="submit" value="Submit" />
-        </form>
+        
+        <input type="button" onclick="var e = document.getElementById('task'); e.action='taskPrepare.php'; e.submit();" value="SHOW">
 
+        <input type="button" onclick="var e = document.getElementById('task'); e.action='taskPrepareALL.php'; e.submit();" value="SHOW_ALL">
+
+
+        
+        </form>
+        
     </body>
 </html>
