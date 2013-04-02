@@ -30,7 +30,7 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s \n", $row["USERID"], $row["PROJECTI
 
 ?>
 <body>
-        <form name="input" action="commitChange.php" method="get">
+        <form name="input" action="commitChange.php" method="get" id="editTask">
         USER ID: <input type="text" name="userid1" value ="<?php echo $row["USERID"]?>"><br>
         PROJECT ID: <input type="text" name="projectid1" value ="<?php echo $row["PROJECTID"]?>"><br>
         WORKSPACE ID: <input type="text" name="workspaceid1" value ="<?php echo $row["WORKSPACEID"]?>"><br>
@@ -43,7 +43,12 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s \n", $row["USERID"], $row["PROJECTI
         TIME FLAG: <input type="text" name="timeflag1" value ="<?php echo $row["TIMEFLAG"]?>"><br>
         GEO LOCATION: <input type="text" name="geolocation1" value ="<?php echo $row["GEOLOCATION"]?>"><br>
         TAG: <input type="text" name="tag1" value ="<?php echo $row["TAG"]?>"><br>        
-        <input type="submit" value="Submit" />
+        
+        <input type="button" onclick="var e = document.getElementById('editTask'); e.action='commitChange.php'; e.submit();" value="COMMIT">
+
+        <input type="button" onclick="var e = document.getElementById('editTask'); e.action='editJSON.php'; e.submit();" value="EDITJSON">
+        
+        
         </form>
 
     </body>
