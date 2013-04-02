@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form name="input" action="checklistAdd.php" method="get" id="checklist">
+        
+        USER ID: <input type="text" name="userid"><br>   
+        WORKSPACE ID: <input type="text" name="workspaceid"><br>
+        PROJECT ID: <input type="text" name="projectid"><br>        
+        CHECKLIST NAME: <input type="text" name="checklistname"><br>
+        CHECKLIST NOTE: <input type="text" name="checklistnote"><br>
+        DUE DATE: <input type="date" name="duedate"><br>
+        DUE TIME: <input type="time" name="duetime"><br>
+        STATUS: <input type="text" name="status"><br>
+        TIME FLAG: <input type="text" name="timeflag"><br>
+        PRIORITY: <input type="text" name="priority"><br>    
+        GEO LOCATION: <input type="text" name="geolocation"><br>
+        TAG: <input type="text" name="tag"><br>        
+        
+        
+        <input type="button" onclick="var e = document.getElementById('checklist'); e.action='checklistAdd.php'; e.submit();" value="SHOW">
+
+       <!-- <input type="button" onclick="var e = document.getElementById('task'); e.action='taskPrepareALL.php'; e.submit();" value="SHOW_ALL"> 
+       -->
+
+        
+        </form>
+        
+    </body>
+</html>
