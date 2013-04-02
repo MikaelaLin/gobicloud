@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form name="input" action="taskPrepare.php" method="get" id="task">
+        USER ID: <input type="text" name="userid"><br>
+        PROJECT ID: <input type="text" name="projectid"><br>
+        WORKSPACE ID: <input type="text" name="workspaceid"><br>
+        TASK NAME: <input type="text" name="taskname"><br>
+        TASK NOTE: <input type="text" name="tasknote"><br>
+        PRIORITY: <input type="text" name="priority"><br>
+        DUE DATE: <input type="date" name="duedate"><br>
+        DUE TIME: <input type="time" name="duetime"><br>
+        STATUS: <input type="text" name="status"><br>
+        TIME FLAG: <input type="text" name="timeflag"><br>
+        GEO LOCATION: <input type="text" name="geolocation"><br>
+        TAG: <input type="text" name="tag"><br>        
+        
+        <input type="button" onclick="var e = document.getElementById('task'); e.action='taskPrepare.php'; e.submit();" value="SHOW">
+
+        <input type="button" onclick="var e = document.getElementById('task'); e.action='taskPrepareALL.php'; e.submit();" value="SHOW_ALL">
+
+
+        
+        </form>
+        
+    </body>
+</html>
