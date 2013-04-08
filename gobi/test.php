@@ -78,7 +78,7 @@ $sql = "SELECT *
 $Task = array('Result' => 'Success', 'TASKID' => $task_id, 'TASKNAME' => $task_name, 'WORKSPACEID' => $task_workspaceid, 
         'PRIORITY' => $task_priority, 'USERID' => $task_userid, 'DUEDATE' => $task_duedate, 'TIMEFLAG' => $task_timeflag, 
         'STATUS' => $task_status, 'GEOLOCATION' => $task_geolocation, 'TAG' => $task_tag, 'PROJECTID' => $task_projectid,
-        'LASTUPDATE' => $task_lastupdate,'TASKNOTE' => $task_tasknote, 'DUETIME' => $task_duetime,);
+        'LASTUPDATE' => $task_lastupdate,'TASKNOTE' => $task_tasknote, 'DUETIME' => $task_duetime);
 
 /* echo JSON of the array for the phone */
 //echo 'This array has taskid and lastupdate: '.$Task;
