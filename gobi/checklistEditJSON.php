@@ -71,7 +71,7 @@ if($mysqli->query("UPDATE CHECKLIST SET USERID ='$userIDC', WORKSPACEID='$worksp
    $Cgeo_location = $row['GEOLOCATION'];
    $Clast_update = $row['LASTUPDATE'];
    
-   
+    }
    
    /* write success, task id and timestamp to array for JSON */
 $checklistEdit = array('Result' => 'Success', 'CHECKLISTID' => $Cchecklist_id, 'USERID' => $Cuser_id, 'WORKSPACEID' => $Cworkspace_id, 
