@@ -28,7 +28,7 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s \n", $row["USERID"], $row["WORKSPAC
 ?>
 
 <body>
-        <form name="input" action="checklistCommit.php" method="get" id="editTask">
+        <form name="input" action="checklistEditJSON.php" method="get" id="editTask">
         USER ID: <input type="text" name="userid" value ="<?php echo $row["USERID"]?>"><br>
         PROJECT ID: <input type="text" name="workspaceid" value ="<?php echo $row["WORKSPACEID"]?>"><br>
         WORKSPACE ID: <input type="text" name="projectid" value ="<?php echo $row["PROJECTID"]?>"><br>
