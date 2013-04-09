@@ -23,17 +23,18 @@ $sql = "SELECT *
    $mysqli->commit();
  
       
- $taskArray = array();
+ $taskArray = array('Result'=>'Success');
+ 
  $i = 0;
  
  /*get all the rows into one array*/
    while($row = $result->fetch_array(MYSQLI_ASSOC)){
-       $taskArray[$i] = $row;
+       $taskArray["task".$i] = $row;
        $i++;
   
    }
 
- $taskArray[] = array('Result'=>'Success');
+ 
 echo json_encode($taskArray);
 
 /* close connection */
