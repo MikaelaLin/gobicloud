@@ -28,23 +28,22 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s \n", $row["USERID"], $row["WORKSPAC
 ?>
 
 <body>
-        <form name="input" action="checklistEditJSON.php" method="get" id="editTask">
+        <form name="input" action="checklistEditJSON.php" method="get" id="editChecklist">
         USER ID: <input type="text" name="userid" value ="<?php echo $row["USERID"]?>"><br>
-        PROJECT ID: <input type="text" name="workspaceid" value ="<?php echo $row["WORKSPACEID"]?>"><br>
-        WORKSPACE ID: <input type="text" name="projectid" value ="<?php echo $row["PROJECTID"]?>"><br>
-        TASK NAME: <input type="text" name="checklistname" value ="<?php echo $row["CHECKLISTNAME"]?>"><br>
-        TASK NOTE: <input type="text" name="checklistnote" value ="<?php echo $row["CHECKLISTNOTE"]?>"><br>
-        PRIORITY: <input type="text" name="duedate" value ="<?php echo $row["DUEDATE"]?>"><br>
-        DUE DATE: <input type="date" name="duetime" value ="<?php echo $row["DUETIME"]?>"><br>
-        DUE TIME: <input type="time" name="status" value ="<?php echo $row["STATUS"]?>"><br>
-        STATUS: <input type="text" name="timeflag" value ="<?php echo $row["TIMEFLAG"]?>"><br>
-        TIME FLAG: <input type="text" name="priority" value ="<?php echo $row["PRIORITY"]?>"><br>
+        PROJECT ID: <input type="text" name="projectid" value ="<?php echo $row["PROJECTID"]?>"><br>
+        WORKSPACE ID: <input type="text" name="workspaceid" value ="<?php echo $row["WORKSPACEID"]?>"><br>
+        CHECKLIST NAME: <input type="text" name="checklistname" value ="<?php echo $row["CHECKLISTNAME"]?>"><br>
+        CHECKLIST NOTE: <input type="text" name="checklistnote" value ="<?php echo $row["CHECKLISTNOTE"]?>"><br>
+        PRIORITY: <input type="text" name="priority" value ="<?php echo $row["PRIORITY"]?>"><br>
+        DUE DATE: <input type="date" name="duedate" value ="<?php echo $row["DUEDATE"]?>"><br>
+        DUE TIME: <input type="time" name="duetime" value ="<?php echo $row["DUETIME"]?>"><br>
+        STATUS: <input type="text" name="status" value ="<?php echo $row["STATUS"]?>"><br>
+        TIME FLAG: <input type="text" name="timeflag" value ="<?php echo $row["TIMEFLAG"]?>"><br>
         GEO LOCATION: <input type="text" name="geolocation" value ="<?php echo $row["GEOLOCATION"]?>"><br>
         TAG: <input type="text" name="tag" value ="<?php echo $row["TAG"]?>"><br>        
         
-        <input type="button" onclick="var e = document.getElementById('editTask'); e.action='checklistCommit.php'; e.submit();" value="COMMIT">
 
-        //<input type="button" onclick="var e = document.getElementById('editTask'); e.action='taskEditJSON.php'; e.submit();" value="EDITJSON">
+        <input type="button" onclick="var e = document.getElementById('editChecklist'); e.action='checklistEditJSON.php'; e.submit();" value="EDITJSON">
         
         
         </form>
