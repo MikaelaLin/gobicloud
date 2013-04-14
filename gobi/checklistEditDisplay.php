@@ -30,7 +30,7 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s %s %s \n", $row["CHECKLISTID"], $ro
 ?>
 
 <body>
-        <form name="input" action="checklistEditDisplayJSON.php" method="get" id="checklistEdit">
+        <form name="input" action="checklistEditAction.php" method="get" id="checklistEdit">
         CHECKLIST ID: <input type="text" name="checklistid" value ="<?php echo $row["CHECKLISTID"]?>"><br>
         GEO LOCATION: <input type="text" name="geolocation" value ="<?php echo $row["GEOLOCATION"]?>"><br>
         CHECKLIST NOTE: <input type="text" name="checklistnote" value ="<?php echo $row["CHECKLISTNOTE"]?>"><br>
