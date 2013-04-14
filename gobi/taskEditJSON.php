@@ -43,13 +43,14 @@ $projectID = $_GET["projectid1"];
 //add data to Task table
 $sqledit = "SELECT TASKID, TASKNAME, WORKSPACEID, PRIORITY, USERID, DUEDATE, TIMEFLAG, STATUS, GEOLOCATION, TAG, 
     PROJECTID, LASTUPDATE, TASKNOTE, DUETIME
-    FROM TASK WHERE TASKID = 10)";
+    FROM TASK WHERE TASKID = (SELECT MAX(TASKID) FROM TASK)";
 
 if($mysqli->query("UPDATE TASK SET TASKNAME='$taskName', WORKSPACEID='$workspaceID',
     PRIORITY='$taskPriority', USERID='$userID', DUEDATE='$dueDate', TIMEFLAG='$timeFlag',
     STATUS='$status', GEOLOCATION='$geolocation', TAG='$tag', PROJECTID='$projectID',
     LASTUPDATE=CURRENT_TIMESTAMP, TASKNOTE='$taskNote', DUETIME='$dueTime'
-    WHERE TASKID=10")){
+    WHERE TASKID = (SELECT MAX(TASKID) FROM TASK)"))
+{
    $mysqli->commit();
 
  //GET ID AND TIMESTAMP
