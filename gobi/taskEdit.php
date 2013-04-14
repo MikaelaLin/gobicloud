@@ -30,7 +30,7 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s \n", $row["USERID"], $row["PROJECTI
 
 ?>
 <body>
-        <form name="input" action="taskCommit.php" method="get" id="editTask">
+        <form name="input" action="taskEditAction.php" method="get" id="editTask">
         USER ID: <input type="text" name="userid1" value ="<?php echo $row["USERID"]?>"><br>
         PROJECT ID: <input type="text" name="projectid1" value ="<?php echo $row["PROJECTID"]?>"><br>
         WORKSPACE ID: <input type="text" name="workspaceid1" value ="<?php echo $row["WORKSPACEID"]?>"><br>
@@ -44,10 +44,7 @@ printf ("%s %s %s %s %s %s %s %s %s %s %s %s \n", $row["USERID"], $row["PROJECTI
         GEO LOCATION: <input type="text" name="geolocation1" value ="<?php echo $row["GEOLOCATION"]?>"><br>
         TAG: <input type="text" name="tag1" value ="<?php echo $row["TAG"]?>"><br>        
         
-        <input type="button" onclick="var e = document.getElementById('editTask'); e.action='taskCommit.php'; e.submit();" value="COMMIT">
-
-        <input type="button" onclick="var e = document.getElementById('editTask'); e.action='taskEditJSON.php'; e.submit();" value="EDITJSON">
-        
+       <input type="submit" value="Submit"> 
         
         </form>
 
